@@ -21,17 +21,17 @@ namespace DAL.Implementation
             context.SaveChanges();
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
         public List<Classification> GetAll()
         {
-            throw null;
+            throw new NotImplementedException();
         }
 
-        public Classification GetById(string id)
+        public Classification GetById(int id)
         {
             throw new NotImplementedException();
         }

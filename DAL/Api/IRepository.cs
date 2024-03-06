@@ -9,8 +9,8 @@ namespace DAL.Api
     public interface IRepository<T>
     {
         List<T> GetAll();
-        T GetById(string id);
-        void Delete(string id);
+        T GetById(int id);
+        void Delete(int id);
         void Update(int id, T item);
         void Add(T item);
     }

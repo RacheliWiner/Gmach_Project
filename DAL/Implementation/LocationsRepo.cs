@@ -16,20 +16,13 @@ namespace DAL.Implementation
             this.context = context;
         }
 
-        public void Delete(string id)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Location> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Location GetById(string id)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public void Update(int id, Location item)
         {
@@ -55,6 +48,16 @@ namespace DAL.Implementation
 
 
         public void Add(Location item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Location GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
