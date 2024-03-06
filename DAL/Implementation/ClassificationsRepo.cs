@@ -28,7 +28,7 @@ namespace DAL.Implementation
 
         public List<Classification> GetAll()
         {
-            throw new NotImplementedException();
+            throw null;
         }
 
         public Classification GetById(string id)
@@ -36,7 +36,7 @@ namespace DAL.Implementation
             throw new NotImplementedException();
         }
 
-        public void Update(Classification item)
+        public void Update(int id, Classification item)
         {
             throw new NotImplementedException();
         }

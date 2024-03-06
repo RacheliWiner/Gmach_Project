@@ -11,7 +11,7 @@ namespace DAL.Api
         List<T> GetAll();
         T GetById(string id);
         void Delete(string id);
-        void Update(T item);
+        void Update(int id, T item);
         void Add(T item);
     }
 }
