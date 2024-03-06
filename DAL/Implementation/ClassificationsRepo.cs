@@ -21,24 +21,27 @@ namespace DAL.Implementation
             context.SaveChanges();
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
         public List<Classification> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Classifications.ToList();
         }
 
-        public Classification GetById(string id)
+        public Classification GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Classification item)
+        public void Update(int id,Classification item)
         {
-            throw new NotImplementedException();
+            foreach(Classification classification in context.Classifications)
+            {
+                //if(classification)
+            }
         }
     }
 }
