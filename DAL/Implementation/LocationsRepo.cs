@@ -1,17 +1,12 @@
 ﻿using DAL.Api;
-using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DAL.DalObject;
 
 namespace DAL.Implementation
 {
-    public class LocationsRepo: IRepository<Location>
+    public class LocationsRepo : IRepository<Location>
     {
-        LibraryContext context;
-        public LocationsRepo(LibraryContext context)
+        GmachContext context;
+        public LocationsRepo(GmachContext context)
         {
             this.context = context;
         }
@@ -19,20 +14,22 @@ namespace DAL.Implementation
 
         public List<Location> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Locations.ToList();
+
+
         }
 
 
 
         public void Update(int id, Location item)
         {
-            foreach(Gmach g in context.Gmaches)
+            foreach (Gmach g in context.Gmaches)
             {
-                if(g.GmachCode == id)
+                if (g.GmachCode == id)
                 {
-                    foreach(Location l in context.Locations)
+                    foreach (Location l in context.Locations)
                     {
-                        if(l.Zip == g.Zip)
+                        if (l.GmachCode == g.GmachCode)
                         {
                             l.City = item.City;
                             l.Neighborhood = item.Neighborhood;
@@ -49,17 +46,24 @@ namespace DAL.Implementation
 
         public void Add(Location item)
         {
-            throw new NotImplementedException();
+            context.Locations.Add(item);
+            context.SaveChanges();
+            return;
+
         }
 
         public Location GetById(int id)
         {
-            throw new NotImplementedException();
+            return context.Locations.Find(id);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = GetById(id);   
+            context.Locations.Remove(entity);
+            context.SaveChanges();
+
+
         }
     }
 }

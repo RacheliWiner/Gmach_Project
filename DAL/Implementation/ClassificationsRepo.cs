@@ -1,5 +1,5 @@
 ﻿using DAL.Api;
-using DAL.Models;
+using DAL.DalObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +10,8 @@ namespace DAL.Implementation
 {
     public class ClassificationsRepo : IRepository<Classification>
     {
-        LibraryContext context;
-        public ClassificationsRepo(LibraryContext context)
+        GmachContext context;
+        public ClassificationsRepo(GmachContext context)
         {
             this.context = context;
         }
