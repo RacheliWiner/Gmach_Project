@@ -1,5 +1,5 @@
 ﻿using DAL.Api;
-using DAL.Models;
+using DAL.DalObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +10,8 @@ namespace DAL.Implementation
 {
     public class ClassificationsRepo : IRepository<Classification>
     {
-        LibraryContext context;
-        public ClassificationsRepo(LibraryContext context)
+        GmachContext context;
+        public ClassificationsRepo(GmachContext context)
         {
             this.context = context;
         }
@@ -23,12 +23,21 @@ namespace DAL.Implementation
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            foreach(Gmach g in context.Gmaches)
+            {
+                if(g.GmachCode == id)
+                {
+                    var entity = GetById(g.Classifications);
+                    //context.Locations.Remove(entity);
+                    context.SaveChanges();
+                    return;
+                }
+            }
         }
 
         public List<Classification> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Classifications.ToList();
         }
 
         public Classification GetById(int id)
