@@ -23,16 +23,9 @@ namespace DAL.Implementation
 
         public void Delete(int id)
         {
-            foreach (Gmach g in context.Gmaches)
-            {
-                if (g.GmachCode == id)
-                {
-                    var entity = GetById(g.Classifications);
-                    //context.Locations.Remove(entity);
-                    context.SaveChanges();
-                    return;
-                }
-            }
+            var entity = GetById(id);
+            context.Classifications.Remove(entity);
+            context.SaveChanges();
         }
 
         public List<Classification> GetAll()
@@ -42,12 +35,16 @@ namespace DAL.Implementation
 
         public Classification GetById(int id)
         {
-            throw new NotImplementedException();
+            return context.Classifications.Find(id);
         }
 
         public void Update(int id, Classification item)
         {
-            throw new NotImplementedException();
+            var entity = GetById(id);
+            context.Classifications.Remove(entity);
+            context.Classifications.Add(item);
+            //context.Classifications.Update(item);
+            context.SaveChanges();
         }
     }
 }

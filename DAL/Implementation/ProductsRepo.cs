@@ -17,6 +17,7 @@ namespace DAL.Implementation
         }
         public void Update(int id, ProductRepo item)
         {
+            //לעשות דברים אחרים לגמרי
             var entity = GetById(id);
             context.Products.Add(entity);//מה צריך לעדכן פה?
             entity.ProductName = item.ProductName;
@@ -34,21 +35,19 @@ namespace DAL.Implementation
             return context.Products.Find(id);
         }
 
-
-        void IRepository<ProductRepo>.Delete(int id)
+        public void Delete(int id)
         {
             var entity = GetById(id);
             context.Products.Remove(entity);
             context.SaveChanges();
-
         }
 
-        void IRepository<ProductRepo>.Add(ProductRepo item)
+        public void Add(ProductRepo item)
         {
             context.Products.Add(item);
             context.SaveChanges();
-            return;
-
         }
     }
 }
+
+

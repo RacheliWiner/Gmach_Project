@@ -22,25 +22,33 @@ namespace DAL.Implementation
 
         public void Update(int id, Location item)
         {
-            foreach (Gmach g in context.Gmaches)
-            {
-                if (g.GmachCode == id)
-                {
-                    foreach (Location l in context.Locations)
-                    {
+            //אולי בשביל הBL
+            //foreach (Gmach g in context.Gmaches)
+            //{
+            //    if (g.GmachCode == id)
+            //    {
+            //        foreach (Location l in context.Locations)
+            //        {
 
-                        if (l.GmachCode == g.GmachCode)
-                        {
-                            l.City = item.City;
-                            l.Neighborhood = item.Neighborhood;
-                            l.Street = item.Street;
-                            l.HouseNumber = item.HouseNumber;
-                            context.SaveChanges();
-                            break;
-                        }
-                    }
-                }
-            }
+            //            if (l.GmachCode == g.GmachCode)
+            //            {
+            //                l.City = item.City;
+            //                l.Neighborhood = item.Neighborhood;
+            //                l.Street = item.Street;
+            //                l.HouseNumber = item.HouseNumber;
+            //                context.SaveChanges();
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
+
+            // זה נכון לעשות ככה?
+
+            var entity = GetById(id);
+            context.Locations.Remove(entity);
+            context.Locations.Update(item);
+            context.SaveChanges();
         }
 
 
