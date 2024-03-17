@@ -17,7 +17,7 @@ public partial class GmachContext : DbContext
 
     public virtual DbSet<Location> Locations { get; set; }
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<ProductRepo> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -99,7 +99,7 @@ public partial class GmachContext : DbContext
                 .HasConstraintName("FK_gmachcode");
         });
 
-        modelBuilder.Entity<Product>(entity =>
+        modelBuilder.Entity<ProductRepo>(entity =>
         {
             entity.HasNoKey();
 
