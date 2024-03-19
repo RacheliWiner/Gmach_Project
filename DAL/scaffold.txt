@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext 'Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\וינר רחל1\Desktop\project\Gmach_Project\DB\GmachDB.mdf";Integrated Security=True;Connect Timeout=30' Microsoft.EntityFrameworkCore.SqlServer –Context GmachContext -OutputDir DALObjects  -Force -NoOnConfiguring
