@@ -1,21 +1,20 @@
-﻿using DAL.Api;
-using DAL.DalObject;
-using ProductRepo = DAL.DalObject.ProductRepo;
+﻿using DAL.DALApi;
+using DAL.DALObjects;
 
 namespace DAL.Implementation
 {
-    internal class ProductsRepo : IRepository<ProductRepo>
+    internal class ProductsRepo : IRepository<Product>
     {
         GmachContext context;
         public ProductsRepo(GmachContext context)
         {
             this.context = context;
         }
-        public List<ProductRepo> GetAll()
+        public List<Product> GetAll()
         {
             return context.Products.ToList();
         }
-        public void Update(int id, ProductRepo item)
+        public void Update(int id, Product item)
         {
             //לעשות דברים אחרים לגמרי
             var entity = GetById(id);
@@ -30,7 +29,7 @@ namespace DAL.Implementation
 
 
         }
-        public ProductRepo GetById(int id)
+        public Product GetById(int id)
         {
             return context.Products.Find(id);
         }
@@ -42,7 +41,7 @@ namespace DAL.Implementation
             context.SaveChanges();
         }
 
-        public void Add(ProductRepo item)
+        public void Add(Product item)
         {
             context.Products.Add(item);
             context.SaveChanges();

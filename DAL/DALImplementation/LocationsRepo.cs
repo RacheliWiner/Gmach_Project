@@ -1,5 +1,5 @@
-﻿using DAL.Api;
-using DAL.DalObject;
+﻿using DAL.DALApi;
+using DAL.DALObjects;
 
 
 namespace DAL.Implementation
