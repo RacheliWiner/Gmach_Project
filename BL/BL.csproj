@@ -6,4 +6,10 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="BLApi\" />
+    <Folder Include="BLImplementation\" />
+    <Folder Include="BLObject\" />
+  </ItemGroup>
+
 </Project>
