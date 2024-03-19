@@ -1,7 +1,7 @@
 ﻿using DAL.DALApi;
 using DAL.DALObjects;
 
-namespace DAL.Implementation
+namespace DAL.DALImplementation
 {
     internal class ProductsRepo : IRepository<Product>
     {

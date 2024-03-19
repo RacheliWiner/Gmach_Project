@@ -2,7 +2,7 @@
 using DAL.DALObjects;
 
 
-namespace DAL.Implementation
+namespace DAL.DALImplementation
 {
     public class LocationsRepo : IRepository<Location>
     {

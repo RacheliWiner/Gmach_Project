@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Implementation
+namespace DAL.DALImplementation
 {
     public class ClassificationsRepo : IRepository<Classification>
     {

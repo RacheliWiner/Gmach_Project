@@ -1,7 +1,7 @@
 using DAL;
-using DAL.Api;
-using DAL.DalObject;
-using DAL.Implementation;
+using DAL.DALApi;
+using DAL.DALObjects;
+using DAL.DALImplementation;
 using DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
