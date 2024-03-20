@@ -3,7 +3,7 @@ using DAL.DALObjects;
 
 namespace DAL.DALImplementation
 {
-    internal class ProductsRepo : IRepository<Product>
+    public class ProductsRepo : IRepository<Product>
     {
         GmachContext context;
         public ProductsRepo(GmachContext context)
