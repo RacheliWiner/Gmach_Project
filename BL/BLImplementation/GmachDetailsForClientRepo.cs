@@ -30,7 +30,7 @@ namespace BL.BLImplementation
         public List<GmachDetailsForClient> GetAllGmachs()
         {
             List<Gmach> temp = gmachRepo.GetAll();
-            List<GmachDetailsForClientRepo> list = new List<GmachDetailsForClientRepo>();
+            List<GmachDetailsForClient> list = new List<GmachDetailsForClient>();
             //for (int i = 0; i < temp.Count; i++)
             //{
             //    list.Add(new GmachDetailsForClientRepo()
@@ -45,8 +45,8 @@ namespace BL.BLImplementation
             //    });
 
             //}
-            //return list;
-            throw new NotImplementedException();
+            return list;
+            //throw new NotImplementedException();
         }
 
         public GmachDetailsForClient GetGmachDetailsById(int id)
