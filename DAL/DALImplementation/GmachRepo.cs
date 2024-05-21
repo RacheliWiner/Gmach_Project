@@ -36,7 +36,7 @@ namespace DAL.DALImplementation
 
         public Gmach GetById(int id)
         {
-            return context.Gmaches.Find(id);
+            return context.Gmaches.FirstOrDefault(g => g.GmachCode == id);
         }
 
         public void Update(int id, Gmach item)

@@ -1,19 +1,13 @@
-﻿using BL.BLImplementation;
-using BL.BLApi;
-using BL.BLObject;
+﻿using BL.BLApi;
+using BL.BLImplementation;
 using DAL;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
     public class BLManager
     {
-        public IGmachDetailsForClient gmachDetailsForClient { get; }
+        IGmachDetailsForClient gmachDetailsForClient;
         //.....
 
         public BLManager()

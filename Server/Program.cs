@@ -1,15 +1,8 @@
-using DAL.DALObjects;
+using BL;
 using DataAccess;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using BL.BLApi;
-using BL.BLImplementation;
-using BL;
 using Microsoft.Extensions.Configuration;
-using DAL.DALApi;
-using DAL.DALImplementation;
-using DAL;
+using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +18,7 @@ var connString = actions.GetConnectionString("GmachDB");
 builder.Services.AddServices(connString);
 var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetRequiredService<IConfiguration>();
+
 
 
 
